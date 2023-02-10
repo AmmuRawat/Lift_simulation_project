@@ -69,7 +69,28 @@ lift_moving_up = () => {
     
     console.log("moving up");
     let lift1_obj=document.getElementsByClassName("lift1");
-    var myVar = setInterval(move_lift,50,lift1_obj);
+    let h=100;
+    let topmargin=0;
+    var data = setInterval(()=>
+    {
+        
+        
+       
+        if (topmargin === 100) 
+        {
+            console.log("top margin= h");
+            clearInterval(data);
+            console.log("top margin achieved value is: ",topmargin);
+        } 
+        else 
+        {
+            lift1_obj.style.top = topmargin + "px";
+            topmargin=topmargin+10;
+            console.log(topmargin);
+           
+        }
+
+    },500);
     
 
 }
@@ -82,18 +103,23 @@ lift_moving_down = () => {
 }
 
 
-move_lift=(lift1_obj)=>{
-    console.log(lift1_obj);
-    let h=100;
-    let topmargin=0;
-    if (topmargin == h) 
-    {
-        clearInterval(myVar);
-    } 
-    else 
-    {
-        lift1_obj.style.top = topmargin + "px";
-    }
-    topmargin += 10;
-    console.log(topmargin);
-}
+// move_lift=(lift1_obj)=>{
+//     //console.log(lift1_obj);
+//     let h=100;
+//     let topmargin=0;
+//     topmargin=topmargin+10;
+//     console.log(topmargin);
+//     if (topmargin == h) 
+//     {
+//         clearInterval(myVar);
+//     } 
+//     else 
+//     {
+//         //lift1_obj.style.top = topmargin + "px";
+//         topmargin=topmargin+10;
+//         console.log(topmargin);
+//         console.log("else is running");
+//     }
+   
+//     //console.log(topmargin);
+// }
